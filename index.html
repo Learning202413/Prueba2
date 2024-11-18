@@ -31,6 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">Informacion</a></li>
+                <li class="nav-item"><a class="nav-link" href="Formulario_Inscripcion.html">Inscripcion De Equipos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Anuncios</a></li>
                 <li class="nav-item"><a class="nav-link" href="Contacto.html">Contactenos</a></li>
             </ul>
@@ -41,17 +42,20 @@
    <!-- Masthead -->
 <header class="masthead" style="position: relative; height: 100vh; overflow: hidden;">
     <!-- Contenedor de Video -->
-    <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;">
-      <video 
-        autoplay 
-        loop 
-        muted 
-        playsinline 
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+      <!-- Video de fondo 1080p -->
+      <iframe id="video-iframe"
+        src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
-        <source src="https://rr3---sn-p5qlsndk.googlevideo.com/videoplayback?expire=1731882699&ei=axo6Z5TmM96I6dsP9pqVoA8&ip=176.1.224.73&id=o-AA1Vb3fpjzWJj3WF3gHR8c3y4uunGeReSzwc7HnD6nSu&itag=137&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C271%2C278%2C313%2C394%2C395%2C396%2C397%2C398%2C399%2C400%2C401&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AQn3pFSpTKzGhXPgpRB_Rm5EpNnyPs0EEOwizr0kmHf9ahN56ssf-Aq3TmuY10ZtrVf0hvmPJYYQqeal&spc=qtApAWL3zsES9nJPwBFJ2ZCmXCzYDaBsCN8TKvxSBzKOcMc5tw&vprv=1&svpuc=1&mime=video%2Fmp4&ns=_YXPMMf6t--LwL2FhYkzZTcQ&rqh=1&gir=yes&clen=5640470181&dur=28799.999&lmt=1727380104357507&keepalive=yes&fexp=24350590,24350655,24350675,24350705,24350737,24350785,51299154,51312688,51326932,51343188&c=WEB&sefc=1&txp=5432434&n=xxZU9wEJWqQbbQ&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRAIgMjwmuUlZRUCdv-aHu9NZwfMkwxCmtUAwFzUaFWgNZq8CIHC5_WlI-G9Xgev8sDZrEo_GeX_pMiRnLJoo6ot5iHSE&rm=sn-uxax4vopj5qx-q0n67d,sn-4g5eyl7l&rrc=79,104&req_id=172b9ae264d4a3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1731861130,&mh=24&mip=190.238.223.65&mm=29&mn=sn-p5qlsndk&ms=rdu&mt=1731859306&mv=u&mvi=3&pl=19&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=AGluJ3MwRQIhAOdJkkscEkbjFmJrUazPC1mki3EwPP2HrquQm02GDTCxAiA1XhU9o6Ut0oYu98luwsoQKfff9DEo2TR3-OfETN1xjQ%3D%3D" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+</iframe>
+
+  </div>
+  
+  
+  
     
     <!-- Overlay for contrast -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 2;"></div>
@@ -85,5 +89,62 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+            let player;
+
+            function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video-iframe', {
+                events: {
+                'onStateChange': onPlayerStateChange,
+                'onReady': onPlayerReady
+                }
+            });
+            }
+
+            function onPlayerReady(event) {
+            const savedTime = localStorage.getItem('videoCurrentTime');
+            if (savedTime) {
+                event.target.seekTo(parseFloat(savedTime));
+            }
+            }
+
+            function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                setInterval(() => {
+                const currentTime = player.getCurrentTime();
+                localStorage.setItem('videoCurrentTime', currentTime);
+                }, 1000);
+            }
+            }
+                        // Función para guardar los datos y redirigir a la página de Jugadores
+            document.getElementById('nextButton').addEventListener('click', function() {
+            // Verificar si el checkbox de aceptación de términos está marcado
+            const termsAccepted = document.getElementById('termsCheck').checked;
+            if (termsAccepted) {
+                // Obtener los valores de los campos
+                const teamName = document.getElementById('teamName').value;
+                const teamTag = document.getElementById('teamTag').value;
+                const teamNationality = document.getElementById('teamNationality').value;
+                const playerCount = document.getElementById('playerCount').value;
+
+                // Guardar los datos en localStorage
+                localStorage.setItem('teamName', teamName);
+                localStorage.setItem('teamTag', teamTag);
+                localStorage.setItem('teamNationality', teamNationality);
+                localStorage.setItem('playerCount', playerCount);
+
+                // Redirigir a la página Jugadores.html
+                window.location.href = 'Jugadores.html';
+            } else {
+                alert('Debes aceptar los términos y condiciones para continuar.');
+            }
+            });
+
+
+
+        </script>
+
+
     </body>
 </html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Grayscale - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/Contacto.css" rel="stylesheet" />
+    <link href="css/Form.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- Imagen al lado izquierdo de "La Liga" -->
+                <img src="assets/img/Copa.png" alt="Logo" style="width: 60px; height: 60px; margin-right: 10px;">
+                La Liga
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Informacion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Anuncios</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead con video y sección de contacto -->
+    <header class="masthead" style="position: relative; height: 120vh; overflow: hidden;">
+       <!-- Contenedor de Video -->
+       <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+        <!-- Video de fondo 1080p -->
+        <iframe 
+            src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
+        </iframe>
+    </div>
+    
+        <div class="container d-flex align-items-center justify-content-center" 
+        style="position: relative; z-index: 3; width: 80%; height: auto; padding: 20px; margin-top: 40px;">
+        <section class="contact-box" style="width: 100%;">
+            <div class="row no-gutters bg-dark">
+                <!-- Sección izquierda con mensaje -->
+                <div class="col-md-4 register-bg" style="padding: 10px;">
+                    <div class="position-absolute testiomonial p-3">
+                    </div>
+                </div>
+
+                <!-- Sección derecha con el formulario -->
+                <div class="col-md-8 d-flex">
+                    <div class="container align-self-center p-3" style="width: 100%; max-width: 1200px; height: auto;">
+                        <h3 class="text-center">Registro de Jugadores</h3>
+
+        <!-- Contenedor de formularios -->
+        <div id="formsContainer">
+           <!-- Formulario del Capitán -->
+        <div id="captainForm">
+            <h3>Capitán</h3>
+            <div class="form-group">
+                <label for="captainNickname">Nickname</label>
+                <input type="text" class="form-control" id="captainNickname" placeholder="Nickname del Capitán" required>
+            </div>
+            <div class="form-group">
+                <label for="captainSteamProfile">Perfil de Steam</label>
+                <input type="url" class="form-control" id="captainSteamProfile" placeholder="URL del perfil de Steam" required>
+            </div>
+            <div class="form-group">
+                <label for="captainSteamID">Steam ID</label>
+                <input type="text" class="form-control" id="captainSteamID" placeholder="Steam ID" required>
+            </div>
+            <div class="form-group">
+                <label for="captainPhone">Teléfono</label>
+                <input type="tel" class="form-control" id="captainPhone" placeholder="Teléfono">
+            </div>
+            <button type="button" class="btn btn-primary" id="toCoCaptainButton">Siguiente</button>
+        </div>
+
+        <!-- Formulario del Co-Capitán -->
+        <div id="coCaptainForm" style="display: none;">
+            <h3>Co-Capitán</h3>
+            <div class="form-group">
+                <label for="coCaptainNickname">Nickname</label>
+                <input type="text" class="form-control" id="coCaptainNickname" placeholder="Nickname del Co-Capitán" required>
+            </div>
+            <div class="form-group">
+                <label for="coCaptainSteamProfile">Perfil de Steam</label>
+                <input type="url" class="form-control" id="coCaptainSteamProfile" placeholder="URL del perfil de Steam" required>
+            </div>
+            <div class="form-group">
+                <label for="coCaptainSteamID">Steam ID</label>
+                <input type="text" class="form-control" id="coCaptainSteamID" placeholder="Steam ID" required>
+            </div>
+            <div class="form-group">
+                <label for="coCaptainPhone">Teléfono</label>
+                <input type="tel" class="form-control" id="coCaptainPhone" placeholder="Teléfono">
+            </div>
+            <button type="button" class="btn btn-secondary" id="backToCaptainButton">Regresar</button>
+            <button type="button" class="btn btn-primary" id="toPlayerFormsButton">Siguiente</button>
+        </div>
+
+        <!-- Formulario de Jugadores -->
+        <div id="playersList" style="display: none;"></div>
+
+
+                            <!-- Vista previa de la información -->
+                            <div id="reviewContainer" style="display: none;" class="mt-4">
+                                <h3 class="text-center">Visualización de la Información</h3>
+                                <div id="teamInfo">
+                                    <h3>Información del equipo</h3>
+                                    <p><strong>Nombre del equipo:</strong> <span id="displayTeamName"></span></p>
+                                    <p><strong>Tag del equipo:</strong> <span id="displayTeamTag"></span></p>
+                                    <p><strong>Nacionalidad:</strong> <span id="displayTeamNationality"></span></p>
+                                    <p><strong>Logo del equipo:</strong> <img id="displayTeamLogo" alt="Logo del equipo" width="100" height="100"></p>
+                                <table class="table table-success table-striped" style="background-color: white;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Rol</th>
+                                            <th scope="col">Nickname</th>
+                                            <th scope="col">Perfil De Steam</th>
+                                            <th scope="col">Steam ID</th>
+                                            <th scope="col">Telefono</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Capitán</th>
+                                            <td> <span id="displayCaptainNickname"></span></td>
+                                            <td><a id="displayCaptainSteamProfile" href="#" target="_blank"></a></td>
+                                            <td><span id="displayCaptainSteamID"></span></td>
+                                            <td><span id="displayCaptainPhone"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Co-Capitán</th>
+                                            <td><span id="displaycoCaptainNickname"></span></td>
+                                            <td><a id="displaycoCaptainSteamProfile" href="#" target="_blank"></a></td>
+                                            <td><span id="displaycoCaptainSteamID"></span></td>
+                                            <td><span id="displaycoCaptainPhone"></span></td>
+                                        </tr>
+                                        <tbody id="playersTableBody">
+                                            <!-- Aquí se agregarán las filas dinámicamente -->
+                                        </tbody>
+                                    </table>
+                                    </tbody>
+                                    
+                               
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-warning" id="editTeamButton">Editar Información del Equipo</button>
+                                    <button class="btn btn-warning" id="editPlayersButton">Editar Información de Jugadores</button>
+                                    <button class="btn btn-success" id="submitButton">Enviar</button>
+                                </div>
+                            </div>
+                            </div>
+                          </form>
+                          
+                        <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIKbNjrYu9g7Htp26m2Z5vsSbVRf5kLfaakXkbUqBa1dvsMheA6EAm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0fSSdQ0vWn3RmV+fAyRUdOkb10OBFjqq8+qgqlO3oOqW0AkX7" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQ6lgzE5K5f5f5v6GT7n7lw5yWElZOu2Pp3U5r" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const captainForm = document.getElementById('captainForm');
+            const coCaptainForm = document.getElementById('coCaptainForm');
+            const playersContainer = document.getElementById('playersList'); // Contenedor dinámico para formularios
+            const reviewContainer = document.getElementById('reviewContainer');
+            const playersInfoList = document.querySelector('#reviewContainer #playersList'); // Contenedor para la visualización de jugadores
+            const playerCount = parseInt(localStorage.getItem('playerCount')) || 4;
+            let currentPlayerIndex = 0;
+    
+            function createPlayerForm(index) {
+                const playerForm = document.createElement('div');
+                playerForm.id = `playerForm${index}`;
+                playerForm.style.display = index === currentPlayerIndex ? 'block' : 'none';
+                playerForm.innerHTML = `
+                    <h4>Jugador ${index + 1}</h4>
+                    <div class="form-group">
+                        <label for="playerNickname${index}">Nickname</label>
+                        <input type="text" class="form-control" id="playerNickname${index}" placeholder="Nickname del jugador ${index + 1}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerSteamProfile${index}">Perfil de Steam</label>
+                        <input type="url" class="form-control" id="playerSteamProfile${index}" placeholder="URL del perfil de Steam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerSteamID${index}">Steam ID</label>
+                        <input type="text" class="form-control" id="playerSteamID${index}" placeholder="Steam ID" required>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="backToPlayerButton${index}">Regresar</button>
+                    <button type="button" class="btn ${index === playerCount - 3 ? 'btn-success' : 'btn-primary'}" 
+                            id="toPlayerButton${index}">${index === playerCount - 3 ? 'Visualizar' : 'Siguiente'}</button>
+                `;
+                playersContainer.appendChild(playerForm);
+    
+                document.getElementById(`backToPlayerButton${index}`).addEventListener('click', function () {
+                    if (index === 0) {
+                        playersContainer.style.display = 'none';
+                        coCaptainForm.style.display = 'block';
+                        playersContainer.style.display = 'none';
+                    } else {
+                        currentPlayerIndex--;
+                        updatePlayerForms();
+                    }
+                });
+    
+                document.getElementById(`toPlayerButton${index}`).addEventListener('click', function () {
+                    
+                    if (index === playerCount - 3) {
+                        reviewContainer.style.display = 'block';
+                        playersContainer.style.display = 'none';
+                        displayReview();
+                        displayCaptainInfo();
+                         // Obtener los valores ingresados en el formulario del jugador
+                    const playerNickname = document.getElementById(`playerNickname${index}`).value;
+                    const playerSteamProfile = document.getElementById(`playerSteamProfile${index}`).value;
+                    const playerSteamID = document.getElementById(`playerSteamID${index}`).value;
+                     // Guardar los datos del jugador en localStorage
+                    localStorage.setItem(`playerNickname${index}`, playerNickname);
+                    localStorage.setItem(`playerSteamProfile${index}`, playerSteamProfile);
+                    localStorage.setItem(`playerSteamID${index}`, playerSteamID);
+                    // Mostrar la información del jugador en la misma página
+                    
+                    loadPlayerData();
+                    } else {
+                        currentPlayerIndex++;
+                        updatePlayerForms();
+                    }
+                });
+            }
+    
+            function updatePlayerForms() {
+                Array.from(playersContainer.children).forEach((child, index) => {
+                    child.style.display = index === currentPlayerIndex ? 'block' : 'none';
+                });
+            }
+    
+            function getPlayerData(prefix, index = '') {
+                return {
+                    nickname: document.getElementById(`${prefix}Nickname${index}`).value,
+                    steamProfile: document.getElementById(`${prefix}SteamProfile${index}`).value,
+                    steamID: document.getElementById(`${prefix}SteamID${index}`).value,
+                };
+            }
+    
+            function submitAllData() {
+                const playersData = [];
+                playersData.push(getPlayerData('captain'));
+                playersData.push(getPlayerData('coCaptain'));
+    
+                for (let i = 0; i < playerCount - 2; i++) {
+                    playersData.push(getPlayerData('player', i));
+                }
+    
+                localStorage.setItem('playersData', JSON.stringify(playersData));
+                alert('¡Datos enviados correctamente!');
+            }
+    
+            function displayReview() {
+                // Información del equipo
+                document.getElementById('displayTeamName').textContent = localStorage.getItem('teamName') || 'N/A';
+                document.getElementById('displayTeamTag').textContent = localStorage.getItem('teamTag') || 'N/A';
+                document.getElementById('displayTeamNationality').textContent = localStorage.getItem('teamNationality') || 'N/A';
+                const teamLogo = localStorage.getItem('teamLogo');
+                if (teamLogo) {
+                    document.getElementById('displayTeamLogo').src = teamLogo;
+                } else {
+                    document.getElementById('displayTeamLogo').alt = 'No disponible';
+                }
+            }
+               
+
+            
+
+
+           document.getElementById('toCoCaptainButton').addEventListener('click', function () {
+            // Obtener los valores ingresados en el formulario del capitán
+            const captainNickname = document.getElementById('captainNickname').value;
+            const captainSteamProfile = document.getElementById('captainSteamProfile').value;
+            const captainSteamID = document.getElementById('captainSteamID').value;
+            const captainPhone = document.getElementById('captainPhone').value;
+
+            // Guardar los datos en localStorage
+            localStorage.setItem('captainNickname', captainNickname);
+            localStorage.setItem('captainSteamProfile', captainSteamProfile);
+            localStorage.setItem('captainSteamID', captainSteamID);
+            localStorage.setItem('captainPhone', captainPhone);
+
+            // Mostrar la información del Capitán en la misma página
+            document.getElementById('displayCaptainNickname').textContent = captainNickname;
+            document.getElementById('displayCaptainSteamID').textContent = captainSteamID;
+            document.getElementById('displayCaptainPhone').textContent = captainPhone;
+            document.getElementById('displayCaptainSteamProfile').href = captainSteamProfile;
+            document.getElementById('displayCaptainSteamProfile').textContent = "Ver Perfil";
+        });
+        document.getElementById('toPlayerFormsButton').addEventListener('click', function () {
+            // Obtener los valores ingresados en el formulario del capitán
+            const coCaptainNickname = document.getElementById('coCaptainNickname').value;
+            const coCaptainSteamProfile = document.getElementById('coCaptainSteamProfile').value;
+            const coCaptainSteamID = document.getElementById('coCaptainSteamID').value;
+            const coCaptainPhone = document.getElementById('coCaptainPhone').value;
+
+            // Guardar los datos en localStorage
+            localStorage.setItem('coCaptainNickname', coCaptainNickname);
+            localStorage.setItem('coCaptainSteamProfile', coCaptainSteamProfile);
+            localStorage.setItem('coCaptainSteamID', coCaptainSteamID);
+            localStorage.setItem('coCaptainPhone', coCaptainPhone);
+
+            // Mostrar la información del Capitán en la misma página
+            document.getElementById('displaycoCaptainNickname').textContent = coCaptainNickname;
+            document.getElementById('displaycoCaptainSteamID').textContent = coCaptainSteamID;
+            document.getElementById('displaycoCaptainPhone').textContent = coCaptainPhone;
+            document.getElementById('displaycoCaptainSteamProfile').href = coCaptainSteamProfile;
+            document.getElementById('displaycoCaptainSteamProfile').textContent = "Ver Perfil";
+        });
+                      
+        
+        
+        // Agregar un event listener al botón para cargar los datos de los jugadores
+                    
+
+                    
+                        
+                        function loadPlayerData() {
+                    const playersTableBody = document.getElementById('playersTableBody');
+
+                    const playerCount = parseInt(localStorage.getItem('playerCount')) || 4;
+                    // Limpiar solo el cuerpo de la tabla de jugadores, sin afectar al capitán ni al co-capitán
+                    playersTableBody.innerHTML = '';
+
+                    // Recorrer todos los jugadores guardados
+                    for (let index = 2; index < playerCount; index++) {
+                        const playerNickname = localStorage.getItem(`playerNickname${index}`);
+                        const playerSteamProfile = localStorage.getItem(`playerSteamProfile${index}`);
+                        const playerSteamID = localStorage.getItem(`playerSteamID${index}`);
+                        
+                        // Verificar si los datos existen antes de agregarlos a la tabla
+                        if (playerNickname && playerSteamProfile && playerSteamID) {
+                            const row = document.createElement('tr');
+                            
+                            row.innerHTML = `
+                                <th scope="row">Jugador ${index + 1}</th>
+                                <td>${playerNickname}</td>
+                                <td><a href="${playerSteamProfile}" target="_blank">Ver Perfil</a></td>
+                                <td>${playerSteamID}</td>
+                            `;
+                            
+                            playersTableBody.appendChild(row);
+                        } else {
+                            console.log(`Datos del jugador ${index + 1} no encontrados en localStorage.`);
+                        }
+                    }
+                }
+
+
+
+                
+
+                
+    
+            for (let i = 0; i < playerCount - 2; i++) {
+                createPlayerForm(i);
+            }
+    
+            document.getElementById('toCoCaptainButton').addEventListener('click', function () {
+                captainForm.style.display = 'none';
+                coCaptainForm.style.display = 'block';
+            });
+    
+            document.getElementById('backToCaptainButton').addEventListener('click', function () {
+                coCaptainForm.style.display = 'none';
+                captainForm.style.display = 'block';
+            });
+    
+            document.getElementById('toPlayerFormsButton').addEventListener('click', function () {
+                coCaptainForm.style.display = 'none';
+                playersContainer.style.display = 'block';
+                updatePlayerForms();
+            });
+    
+            document.getElementById('submitButton').addEventListener('click', submitAllData);
+            document.getElementById('editTeamButton').addEventListener('click', function () {
+                reviewContainer.style.display = 'none';
+                captainForm.style.display = 'block';
+            });
+    
+            document.getElementById('editPlayersButton').addEventListener('click', function () {
+                reviewContainer.style.display = 'none';
+                playersContainer.style.display = 'block';
+                updatePlayerForms();
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

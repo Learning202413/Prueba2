@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Grayscale - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/Contacto.css" rel="stylesheet" />
+    <link href="css/Form.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- Imagen al lado izquierdo de "La Liga" -->
+                <img src="assets/img/Copa.png" alt="Logo" style="width: 60px; height: 60px; margin-right: 10px;">
+                La Liga
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Informacion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Anuncios</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead con video y sección de contacto -->
+    <header class="masthead" style="position: relative; height: 120vh; overflow: hidden;">
+        <!-- Contenedor de Video -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+            <!-- Video de fondo 1080p -->
+            <iframe id="video-iframe"
+                    src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
+            </iframe>
+
+        </div>
+        
+        <div class="container d-flex align-items-center justify-content-center" 
+        style="position: relative; z-index: 3; width: 80%; height: auto; padding: 20px; margin-top: 40px;">
+        <section class="contact-box" style="width: 100%;">
+            <div class="row no-gutters bg-dark">
+                <!-- Sección izquierda con mensaje -->
+                <div class="col-md-4 register-bg" style="padding: 10px;">
+                    <div class="position-absolute testiomonial p-3">
+                    </div>
+                </div>
+
+                <!-- Sección derecha con el formulario -->
+                <div class="col-md-8 d-flex">
+                    <div class="container align-self-center p-3" style="width: 100%; max-width: 1200px; height: auto;">
+                        <h3 class="font-weight-bold mb-2">Registra a tu equipo</h3>
+                        <p class="text-muted small mb-2">Ingresa la información de tu equipo.</p>
+
+                        <form id="teamRegistrationForm">
+                            <!-- Nombre del equipo -->
+                            <div class="form-group mb-2">
+                                <label class="font-weight-bold small">Nombre del equipo <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-control-sm" id="teamName" placeholder="Nombre del equipo" required
+                                    onfocus="this.style.backgroundColor = 'white';" 
+                                    onblur="this.style.backgroundColor = 'white';">
+                            </div>
+                        
+                            <!-- Tag del equipo -->
+                            <div class="form-group mb-2">
+                                <label class="font-weight-bold small">Tag del equipo <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-control-sm" id="teamTag" placeholder="Tag del equipo" required
+                                onfocus="this.style.backgroundColor = 'white';" 
+                                onblur="this.style.backgroundColor = 'white';">
+                            </div>
+                        
+                            <!-- Nacionalidad del equipo -->
+                            <div class="form-group mb-2">
+                                <label class="font-weight-bold small">Nacionalidad <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-control-sm" id="teamNationality" placeholder="Nacionalidad del equipo" required
+                                onfocus="this.style.backgroundColor = 'white';" 
+                                onblur="this.style.backgroundColor = 'white';">
+                            </div>
+                        
+                            <!-- Logo del equipo -->
+                            <div class="form-group mb-2">
+                                <label class="font-weight-bold small">Logo del equipo <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control form-control-sm" id="teamLogo" required
+                                onfocus="this.style.backgroundColor = 'white';" 
+                                onblur="this.style.backgroundColor = 'white';">
+                            </div>
+                        
+                            <!-- Cantidad de jugadores -->
+                            <div class="form-group mb-2">
+                                <label class="font-weight-bold small" for="playerCount" >Cantidad de jugadores a registrar <span class="text-danger">*</span></label>
+                                <select name="playerCount" id="playerCount" class="custom-select" required
+                                    onfocus="this.style.backgroundColor = 'white';" 
+                                    onblur="this.style.backgroundColor = 'white';" style=" height: 50px; width: 100%; background-color: #1f232b; border: #1f232b;">
+                                    <option value="selecciona">Selecciona la cantidad de jugadores</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </div>
+                        
+                            <!-- Aceptación de términos y condiciones -->
+                            <div class="form-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label small text-muted" for="termsCheck">Acepto términos y condiciones</label>
+                                </div>
+                            </div>
+                        
+                            <!-- Botón para mostrar los campos de los jugadores -->
+                            <button type="button" id="nextButton" class="btn btn-primary btn-sm btn-block">Siguiente</button>
+                        </form>
+
+                        <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIKbNjrYu9g7Htp26m2Z5vsSbVRf5kLfaakXkbUqBa1dvsMheA6EAm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0fSSdQ0vWn3RmV+fAyRUdOkb10OBFjqq8+qgqlO3oOqW0AkX7" crossorigin="anonymous"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQ6lgzE5K5f5f5v6GT7n7lw5yWElZOu2Pp3U5r" crossorigin="anonymous"></script>
+    <script>
+        // Función para guardar los datos y redirigir a la página de Jugadores
+        document.getElementById('nextButton').addEventListener('click', function() {
+            // Verificar si el checkbox de aceptación de términos está marcado
+            const termsAccepted = document.getElementById('termsCheck').checked;
+    
+            if (termsAccepted) {
+                // Obtener los valores de los campos
+                const teamName = document.getElementById('teamName').value;
+                const teamTag = document.getElementById('teamTag').value;
+                const teamNationality = document.getElementById('teamNationality').value;
+                const playerCount = document.getElementById('playerCount').value;
+                
+                // Guardar los datos en localStorage
+                localStorage.setItem('teamName', teamName);
+                localStorage.setItem('teamTag', teamTag);
+                localStorage.setItem('teamNationality', teamNationality);
+                localStorage.setItem('playerCount', playerCount);
+    
+                // Redirigir a la página Jugadores.html
+                window.location.href = 'Jugadores.html';
+            } else {
+                alert('Debes aceptar los términos y condiciones para continuar.');
+            }
+        });
+    </script>
+    <script>
+        let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video-iframe', {
+    events: {
+      'onStateChange': onPlayerStateChange,
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  const savedTime = localStorage.getItem('videoCurrentTime');
+  if (savedTime) {
+    event.target.seekTo(parseFloat(savedTime));
+  }
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    setInterval(() => {
+      const currentTime = player.getCurrentTime();
+      localStorage.setItem('videoCurrentTime', currentTime);
+    }, 1000);
+  }
+}
+
+window.addEventListener('load', () => {
+  // Cargar los datos del equipo desde localStorage
+  const teamName = localStorage.getItem('teamName');
+  const teamTag = localStorage.getItem('teamTag');
+  const teamNationality = localStorage.getItem('teamNationality');
+  const playerCount = localStorage.getItem('playerCount');
+
+  // Mostrar los datos en la página
+  document.getElementById('displayTeamName').textContent = teamName;
+  document.getElementById('displayTeamTag').textContent = teamTag;
+  document.getElementById('displayTeamNationality').textContent = teamNationality;
+  document.getElementById('displayPlayerCount').textContent = playerCount;
+});
+
+    </script>
+</body>
+</html>
