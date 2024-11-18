@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Formulario</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -164,14 +164,25 @@
                 const teamNationality = document.getElementById('teamNationality').value;
                 const playerCount = document.getElementById('playerCount').value;
                 
+                
                 // Guardar los datos en localStorage
                 localStorage.setItem('teamName', teamName);
                 localStorage.setItem('teamTag', teamTag);
                 localStorage.setItem('teamNationality', teamNationality);
                 localStorage.setItem('playerCount', playerCount);
+                const fileInput = document.getElementById('teamLogo');
+                const file = fileInput.files[0];
+                if (file) {
+                    const imageURL = URL.createObjectURL(file);
+                    localStorage.setItem('teamLogo', imageURL);
+                    alert('Imagen guardada correctamente.');
+                } else {
+                    alert('Por favor, selecciona una imagen.');
+                }
+
     
                 // Redirigir a la página Jugadores.html
-                window.location.href = 'Jugadores.html';
+                window.location.href = 'Jugadores2.html';
             } else {
                 alert('Debes aceptar los términos y condiciones para continuar.');
             }
