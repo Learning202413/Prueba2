@@ -75,12 +75,14 @@
                 <!-- Sección derecha con el formulario -->
                 <div class="col-md-8 d-flex">
                     <div class="container align-self-center p-3" style="width: 100%; max-width: 1200px; height: auto;">
-                        <h3 class="text-center">Registro de Jugadores</h3>
+                        
 
         <!-- Contenedor de formularios -->
         <div id="formsContainer">
            <!-- Formulario del Capitán -->
+           
         <div id="captainForm">
+            <h3 class="text-center">Registro de Jugadores</h3>
             <h3>Capitán</h3>
             <div class="form-group">
                 <label for="captainNickname">Nickname</label>
@@ -110,12 +112,13 @@
                 <button type="button" class="btn btn-secondary mx-2" id="backForm">Regresar</button>
                 <button type="button" class="btn btn-primary mx-2" id="toCoCaptainButton">Siguiente</button>
             </div>
-            
+            <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
             
         </div>
 
         <!-- Formulario del Co-Capitán -->
         <div id="coCaptainForm" style="display: none;">
+            <h3 class="text-center">Registro de Jugadores</h3>
             <h3>Co-Capitán</h3>
             <div class="form-group">
                 <label for="coCaptainNickname">Nickname</label>
@@ -145,75 +148,225 @@
                 <button type="button" class="btn btn-secondary mx-2" id="backToCaptainButton">Regresar</button>
                 <button type="button" class="btn btn-primary mx-2" id="toPlayerFormsButton">Siguiente</button>
             </div>
-            
+            <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
         </div>
 
         <!-- Formulario de Jugadores -->
         <div id="playersList" style="display: none;"></div>
-
-
                             <!-- Vista previa de la información -->
-                            <div id="reviewContainer" style="display: none;" class="mt-4">
-                                <h3 class="text-center">Visualización de la Información</h3>
-                                <div id="teamInfo">
-                                    <h3>Información del equipo</h3>
-                                    <p><strong>Nombre del equipo:</strong> <span id="displayTeamName"></span></p>
-                                    <p><strong>Tag del equipo:</strong> <span id="displayTeamTag"></span></p>
-                                    <p><strong>Nacionalidad:</strong> <span id="displayTeamNationality"></span></p>
-                                    <div class="form-group mb-2">
-                                        <label>Logo del equipo <span class="text-danger">*</span></label>
-                                        <div class="main-img-preview mt-2" id="previewContainer" style="text-align: center;">
-                                            <img class="thumbnail img-preview" id="previewLogo" 
-                                                 src="" alt="Logo Preview" style="max-width: 150px;">
-                                        </div>
-                                    </div>
-                                <table class="table table-success table-striped" id="tabla-jugadores" style="background-color: white;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Rol</th>
-                                            <th scope="col">Nickname</th>
-                                            <th scope="col">Perfil De Steam</th>
-                                            <th scope="col">Steam ID</th>
-                                            <th scope="col">Telefono</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Capitán</th>
-                                            <td> <span id="displayCaptainNickname"></span></td>
-                                            <td><a id="displayCaptainSteamProfile" href="#" target="_blank"></a></td>
-                                            <td><span id="displayCaptainSteamID"></span></td>
-                                            <td><span id="displayCaptainPhone"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Co-Capitán</th>
-                                            <td><span id="displaycoCaptainNickname"></span></td>
-                                            <td><a id="displaycoCaptainSteamProfile" href="#" target="_blank"></a></td>
-                                            <td><span id="displaycoCaptainSteamID"></span></td>
-                                            <td><span id="displaycoCaptainPhone"></span></td>
-                                        </tr>
-                                        <tbody id="playersTableBody">
-                                            <!-- Aquí se agregarán las filas de los jugadores -->
-                                        </tbody>
-                                    </tbody>
-                                    </table>
+                            
+    <div id="reviewContainer" style="display: none; width: 100%; max-width: 1200px; height: auto;" class="mt-4">
+        <h3 class="text-center">Visualización de la Información</h3>
+        <div id="teamInfo">
+            <div id="app">
+                <div class="card" style="display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
+                    <!-- Contenedor con foto a la izquierda e información a la derecha -->
+                    <div style="display: flex; align-items: flex-start; padding: 10px;">
+                        <div style="width: 30%; padding: 10px;">
+                            <div class="main-img-preview card_image" id="previewContainer" style="text-align: center; height: 150px; width: 150px;">
+                                <img class="thumbnail img-preview picture" id="previewLogo" src="img/adriana.jpg" alt="Logo Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid rgb(250, 238, 227); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);">
+                            </div>
+                        </div>
+                        <div id="infoContainer" style="width: 600px; padding: 10px; margin-top: -40px; margin-left: 20px;">
+                            <h2 style="color: peru; margin: 0;">Información del equipo</h2>
+                            <p style="color: gray; margin: 5px 0 0;"><strong>Nombre del equipo:</strong> <span id="displayTeamName"></span></p>
+                            <p style="color: gray; margin: 5px 0 0;"><strong>Tag del equipo:</strong> <span id="displayTeamTag"></span></p>
+                            <p style="color: gray; margin: 5px 0 0;"><strong>Nacionalidad:</strong> <span id="displayTeamNationality"></span></p>
+                        </div>
+                    </div>
 
-                                    <div class="text-center mt-3">
-                                        <div class="d-flex justify-content-center w-100">
-                                            <button class="btn btn-warning btn-sm w-auto mx-2" id="editTeamButton">Editar Equipo</button>
-                                            <button class="btn btn-warning btn-sm w-auto mx-2" id="editPlayersButton">Editar Jugadores</button>
-                                            <button class="btn btn-success btn-sm w-auto mx-2" id="submitButton">Guardar</button>
-                                        </div>
-                                    </div>
+                    <!-- Tabla de información -->
+                    <div style="padding: 10px; margin-top: 20px;">
+                        <table class="table table-success table-striped" id="tabla-jugadores" style="background-color: white; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Rol</th>
+                                    <th scope="col">Nickname</th>
+                                    <th scope="col">Perfil De Steam</th>
+                                    <th scope="col">Steam ID</th>
+                                    <th scope="col">Teléfono</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Capitán</th>
+                                    <td><span id="displayCaptainNickname"></span></td>
+                                    <td><a id="displayCaptainSteamProfile" href="#" target="_blank"></a></td>
+                                    <td><span id="displayCaptainSteamID"></span></td>
+                                    <td><span id="displayCaptainPhone"></span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Co-Capitán</th>
+                                    <td><span id="displaycoCaptainNickname"></span></td>
+                                    <td><a id="displaycoCaptainSteamProfile" href="#" target="_blank"></a></td>
+                                    <td><span id="displaycoCaptainSteamID"></span></td>
+                                    <td><span id="displaycoCaptainPhone"></span></td>
+                                </tr>
+                                <tbody id="playersTableBody">
+                                    <!-- Aquí se agregarán las filas de los jugadores -->
+                                </tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Botones -->
+                    <div style="text-align: center; margin-top: 20px;">
+                        <div class="text-center mt-3 card_footer">
+                            <div class="d-flex justify-content-center w-100">
+                                <button class="btn" id="editTeamButton" style="padding: 10px 20px; border-radius: 25px; color: white; background-color: rgb(42, 71, 94); border: none; cursor: pointer;">Editar Equipo</button>
+                                <button class="btn" id="editPlayersButton" style="padding: 10px 20px; border-radius: 25px; color: white; background-color: rgb(42, 71, 94); border: none; cursor: pointer;">Editar Jugadores</button>
+                                <button class="btn" id="submitButton" style="padding: 10px 20px; border-radius: 25px; color: white; background-color: rgb(42, 71, 94); border: none; cursor: pointer;">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        
+                                
+                                    <style>
+                                        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+                                        *{ 
+                                            font-family: 'Roboto', sans-serif;
+                                            margin: 0;
+                                        }
+                                        body{
+                                            background: crimson;    
+                                        }
+                                        #app{
+                                            height: 100vh;
+                                            display: grid;
+                                            justify-content: center;
+                                            place-items: center;
+                                        }
+                                        .card{
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            width: 100%;
+                                            height: 600px;
+                                            background: linear-gradient(
+                                                rgba(255, 255, 255) 30%, 
+                                                rgba(42, 71, 94) 30%
+                                            );
+                                            box-shadow: 0 0 25px rgb(64, 66, 228);
+                                            border-radius: 10px;
+                                            padding: 50px 16px;
+                                        }
+                                        .card_image{
+                                            position: relative;
+                                            height: 150px;
+                                            width: 150px;
+                                        }
+                                        .card_image .picture{
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            border-radius: 50%;
+                                            border: 4px solid rgb(250, 238, 227);
+                                            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+                                        }
+                                        .card_body{
+                                            text-align: center;
+                                            padding: 20px;
+                                        }
+                                        .card_body h2{
+                                            color: peru;
+                                        }
+                                        .card_body p{
+                                            color: gray;
+                                        }
+                                        .card_redes{
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: space-around;
+                                        }
+                                        .card_redes div{
+                                            padding: 10px;
+                                            text-align: center;
+                                            background: papayawhip;
+                                            border-radius: 6px;
+                                            width: 100%;
+                                            margin: 10px;
+                                        }
+                                        .card_redes div p{
+                                            font-size: 20px;
+                                        }
+                                        .card_redes div a{
+                                            text-decoration: none;
+                                            color: peru;
+                                        }
+                                        .card_footer{
+                                            padding-top: 25px;
+                                            display: flex;
+                                            width: 100%;
+                                            justify-content: space-around;
+                                        }
+                                        .card_footer .btn {
+                                            padding: 8px 20px;
+                                            border-radius: 25px;
+                                            color: white;
+                                            background: linear-gradient(
+                                                to left,
+                                                rgb(39, 126, 100) 0%, /* Color secundario de Steam */
+                                                rgb(49, 170, 179) 100% /* Color secundario de Steam */
+                                            );
+                                            transition: all 2s ease;
+                                            text-decoration: none;
+                                        }
+
+                                        .card_footer .btn:hover{
+                                            padding: 8px 30px;
+                                            background: linear-gradient(
+                                                to left,
+                                                rgba(49, 170, 179, 1) 0%,
+                                                rgba(49, 170, 179, 1) 100%
+                                            );
+                                        }
+                                        /* Animaciones */
+                                        @keyframes _in {
+                                            0%{ 
+                                                border-radius: 50%;
+                                            }
+                                            100%{ 
+                                                border-radius: 0%;
+                                                transform: scale(1.2);
+                                            }
+                                        }
+                                        @keyframes _out {
+                                            0%{ 
+                                                border-radius: 0%;
+                                                transform: scale(1.2);
+                                            }
+                                            100%{ 
+                                                border-radius: 50%;
+                                                transform: scale(1);
+                                            }
+                                        } 
+                                    </style>
+                                
+                                    <script>
+                                        let card = document.querySelector(".card");
+                                        let image = document.querySelector(".picture");
+                                
+                                        card.addEventListener("mouseover", e => {
+                                            image.style.animation = `_in 0.5s ease forwards`;
+                                        });
+                                
+                                        card.addEventListener("mouseout", e => {
+                                            image.style.animation = `_out 0.5s ease forwards`;
+                                        });
+                                    </script>
                                     
-                                    
-                                    
-                                    
+                                
                             </div>
                             </div>
                           </form>
                           
-                        <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
+                        
                     </div>
                 </div>
             </div>
@@ -241,6 +394,7 @@
                 playerForm.id = `playerForm${index}`;
                 playerForm.style.display = index === currentPlayerIndex ? 'block' : 'none';
                 playerForm.innerHTML = `
+                <h3 class="text-center">Registro de Jugadores</h3>
                     <h4>Jugador ${index + 1}</h4>
                     <div class="form-group">
                         <label for="playerNickname${index}">Nickname</label>
@@ -266,7 +420,9 @@
                             id="toPlayerButton${index}">
                         ${index === playerCount - 3 ? 'Visualizar' : 'Siguiente'}
                     </button>
+                    
             </div>
+            <small class="d-inline-block text-muted mt-2">© 2024 Learning</small>
                     
                     `;
                 playersContainer.appendChild(playerForm);
@@ -465,7 +621,23 @@
             
         });
     </script>
-    
+    <script>
+        function adjustMargin() {
+            var playersCount = document.getElementById('playersTableBody').children.length;
+            var infoContainer = document.getElementById('infoContainer');
+            
+            if (playersCount <= 4) {
+                infoContainer.style.marginTop = '-40px';
+            } else if (playersCount <= 7) {
+                infoContainer.style.marginTop = '-60px';
+            } else {
+                infoContainer.style.marginTop = '-80px';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', adjustMargin);
+    </script>
+
     
     
 </body>
