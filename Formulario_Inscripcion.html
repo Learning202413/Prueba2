@@ -106,10 +106,13 @@
                         
                             <!-- Logo del equipo -->
                             <div class="form-group mb-2">
-                                <label class="font-weight-bold small">Logo del equipo <span class="text-danger">*</span></label>
-                                <input type="file" class="form-control form-control-sm" id="teamLogo" required
-                                onfocus="this.style.backgroundColor = 'white';" 
-                                onblur="this.style.backgroundColor = 'white';">
+                                
+                                <label class="font-weight-bold small mt-2">Logo del equipo <span class="text-danger">*</span></label>
+                                <div class="main-img-preview mt-2" id="previewContainer" style="display: none; text-align: center;">
+                                    <img class="thumbnail img-preview" id="previewLogo" 
+                                         src="" alt="Logo Preview" style="max-width: 150px;">
+                                </div>
+                                <input type="file" class="form-control form-control-sm" id="teamLogo" required>
                             </div>
                         
                             <!-- Cantidad de jugadores -->
@@ -170,14 +173,14 @@
                 localStorage.setItem('teamTag', teamTag);
                 localStorage.setItem('teamNationality', teamNationality);
                 localStorage.setItem('playerCount', playerCount);
-                const fileInput = document.getElementById('teamLogo');
-                const file = fileInput.files[0];
-                if (file) {
-                    const imageURL = URL.createObjectURL(file);
-                    localStorage.setItem('teamLogo', imageURL);
-                    alert('Imagen guardada correctamente.');
-                } else {
-                    alert('Por favor, selecciona una imagen.');
+                const input = event.target;
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Guardar la URL en Local Storage
+                        localStorage.setItem("teamLogoPreview", e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
                 }
 
     
@@ -186,8 +189,30 @@
             } else {
                 alert('Debes aceptar los términos y condiciones para continuar.');
             }
+
+        });
+        
+
+    </script>
+    <script>
+        document.getElementById("teamLogo").addEventListener("change", function(event) {
+            const input = event.target;
+            const previewContainer = document.getElementById("previewContainer");
+            const previewLogo = document.getElementById("previewLogo");
+    
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewLogo.src = e.target.result; // Mostrar la imagen seleccionada
+                    previewContainer.style.display = "block"; // Mostrar el cuadro de previsualización
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                previewContainer.style.display = "none"; // Ocultar el cuadro si no hay archivo seleccionado
+            }
         });
     </script>
+    
     <script>
         let player;
 

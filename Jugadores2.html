@@ -106,7 +106,11 @@
                 onfocus="this.style.backgroundColor = 'white';" 
                 onblur="this.style.backgroundColor = 'white';">
             </div>
-            <button type="button" id="toCoCaptainButton" class="btn btn-primary btn-sm btn-block">Siguiente</button>
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-secondary mx-2" id="backForm">Regresar</button>
+                <button type="button" class="btn btn-primary mx-2" id="toCoCaptainButton">Siguiente</button>
+            </div>
+            
             
         </div>
 
@@ -156,8 +160,13 @@
                                     <p><strong>Nombre del equipo:</strong> <span id="displayTeamName"></span></p>
                                     <p><strong>Tag del equipo:</strong> <span id="displayTeamTag"></span></p>
                                     <p><strong>Nacionalidad:</strong> <span id="displayTeamNationality"></span></p>
-                                    <p><strong>Logo del equipo:<img id="displayTeamLogo" alt="Logo del equipo" width="100" height="100">
-                                    </p>
+                                    <div class="form-group mb-2">
+                                        <label>Logo del equipo <span class="text-danger">*</span></label>
+                                        <div class="main-img-preview mt-2" id="previewContainer" style="text-align: center;">
+                                            <img class="thumbnail img-preview" id="previewLogo" 
+                                                 src="" alt="Logo Preview" style="max-width: 150px;">
+                                        </div>
+                                    </div>
                                 <table class="table table-success table-striped" id="tabla-jugadores" style="background-color: white;">
                                     <thead>
                                         <tr>
@@ -314,11 +323,18 @@
                 document.getElementById('displayTeamName').textContent = localStorage.getItem('teamName') || 'N/A';
                 document.getElementById('displayTeamTag').textContent = localStorage.getItem('teamTag') || 'N/A';
                 document.getElementById('displayTeamNationality').textContent = localStorage.getItem('teamNationality') || 'N/A';
-                const teamLogo = localStorage.getItem('teamLogo');
-                    if (teamLogo) {
-                        document.getElementById('displayTeamLogo').src = teamLogo;
+                // Recuperar la URL desde Local Storage
+                    const logoPreview = localStorage.getItem("teamLogoPreview");
+                    const previewContainer = document.getElementById("previewContainer");
+                    const previewLogo = document.getElementById("previewLogo");
+
+                    if (logoPreview) {
+                        // Mostrar la imagen si existe
+                        previewLogo.src = logoPreview;
+                        previewContainer.style.display = "block";
                     } else {
-                        document.getElementById('displayTeamLogo').textContent = 'Logo no disponible';
+                        // Ocultar el contenedor si no hay imagen
+                        previewContainer.style.display = "none";
                     }
 
             }
@@ -428,6 +444,12 @@
                 captainForm.style.display = 'none';
                 coCaptainForm.style.display = 'block';
             });
+            document.getElementById('backForm').addEventListener('click', function () {
+    
+            // Redirigir a la página de Co-Capitán
+            window.location.href = 'Formulario_Inscripcion.html';
+        });
+
     
             document.getElementById('backToCaptainButton').addEventListener('click', function () {
                 coCaptainForm.style.display = 'none';
@@ -443,6 +465,7 @@
             
         });
     </script>
+    
     
     
 </body>
