@@ -29,7 +29,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <!-- Imagen al lado izquierdo de "La Liga" -->
                 <img src="assets/img/Copa.png" alt="Logo" style="width: 60px; height: 60px; margin-right: 10px;">
                 La Liga
@@ -42,7 +42,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Informacion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Formulario_Inscripcion.html">Inscripcion De Equipos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Anuncios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contactenos</a></li>
                 </ul>
             </div>
         </div>
@@ -53,13 +55,10 @@
         <!-- Contenedor de Video -->
         <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
             <!-- Video de fondo 1080p -->
-            <iframe id="video-iframe"
-                    src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
-            </iframe>
+            <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                <source src="assets/img/Fondo ‐ Hecho con Clipchamp.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
 
         </div>
         
@@ -112,6 +111,7 @@
                                     <img class="thumbnail img-preview" id="previewLogo" 
                                          src="" alt="Logo Preview" style="max-width: 150px;">
                                 </div>
+                                <br> <!-- Añadido un salto de línea -->
                                 <input type="file" class="form-control form-control-sm" id="teamLogo" required>
                             </div>
                         
@@ -155,8 +155,27 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQ6lgzE5K5f5f5v6GT7n7lw5yWElZOu2Pp3U5r" crossorigin="anonymous"></script>
     <script>
-        // Función para guardar los datos y redirigir a la página de Jugadores
-        document.getElementById('nextButton').addEventListener('click', function() {
+        // Manejar la previsualización de la imagen seleccionada
+        document.getElementById("teamLogo").addEventListener("change", function(event) {
+            const input = event.target;
+            const previewContainer = document.getElementById("previewContainer");
+            const previewLogo = document.getElementById("previewLogo");
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewLogo.src = e.target.result; // Mostrar la imagen seleccionada
+                    previewContainer.style.display = "block"; // Mostrar el cuadro de previsualización
+                    localStorage.setItem("teamLogo", e.target.result); // Guardar la imagen en localStorage
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                previewContainer.style.display = "none"; // Ocultar el cuadro si no hay archivo seleccionado
+            }
+        });
+
+        // Botón para guardar datos y pasar a la página Jugadores2
+        document.getElementById("nextButton").addEventListener("click", function() {
             // Verificar si el checkbox de aceptación de términos está marcado
             const termsAccepted = document.getElementById('termsCheck').checked;
     
@@ -166,23 +185,13 @@
                 const teamTag = document.getElementById('teamTag').value;
                 const teamNationality = document.getElementById('teamNationality').value;
                 const playerCount = document.getElementById('playerCount').value;
-                
-                
+   
                 // Guardar los datos en localStorage
                 localStorage.setItem('teamName', teamName);
                 localStorage.setItem('teamTag', teamTag);
                 localStorage.setItem('teamNationality', teamNationality);
                 localStorage.setItem('playerCount', playerCount);
-                const input = event.target;
-                if (input.files && input.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        // Guardar la URL en Local Storage
-                        localStorage.setItem("teamLogoPreview", e.target.result);
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-
+                
     
                 // Redirigir a la página Jugadores.html
                 window.location.href = 'Jugadores2.html';
@@ -190,26 +199,6 @@
                 alert('Debes aceptar los términos y condiciones para continuar.');
             }
 
-        });
-        
-
-    </script>
-    <script>
-        document.getElementById("teamLogo").addEventListener("change", function(event) {
-            const input = event.target;
-            const previewContainer = document.getElementById("previewContainer");
-            const previewLogo = document.getElementById("previewLogo");
-    
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    previewLogo.src = e.target.result; // Mostrar la imagen seleccionada
-                    previewContainer.style.display = "block"; // Mostrar el cuadro de previsualización
-                };
-                reader.readAsDataURL(input.files[0]);
-            } else {
-                previewContainer.style.display = "none"; // Ocultar el cuadro si no hay archivo seleccionado
-            }
         });
     </script>
     

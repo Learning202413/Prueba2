@@ -40,44 +40,36 @@
 </nav>
 
    <!-- Masthead -->
-<header class="masthead" style="position: relative; height: 100vh; overflow: hidden;">
-    <!-- Contenedor de Video -->
+   <header class="masthead" style="position: relative; height: 100vh; overflow: hidden;">
+    <!-- Contenedor del video -->
     <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
-      <!-- Video de fondo 1080p -->
-      <iframe id="video-iframe"
-        src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
-</iframe>
+        <!-- Video de fondo -->
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/img/Fondo ‐ Hecho con Clipchamp.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
 
-  </div>
-  
-  
-  
-    
-    <!-- Overlay for contrast -->
+    <!-- Overlay para contraste -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 2;"></div>
-    
-    <!-- Content -->
+
+    <!-- Contenido principal -->
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center" style="position: relative; z-index: 3;">
-        <!-- Nuevo contenedor con fondo oscuro que contiene el título, subtítulo y botón -->
         <div class="d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.8); padding: 50px; border-radius: 10px;">
-          <div class="text-center text-white">
-            <h1 class="mx-auto my-0 text-uppercase">La Liga</h1>
-            <br> <!-- Añadido un segundo salto de línea -->
-            <br> <!-- Añadido un segundo salto de línea -->
-            <h2 class="text-white-50 mx-auto mt-2 mb-5">
-              ¡La competencia está por comenzar! Se jugará en ZoneMod, un modo creado por la 
-              comunidad que equilibrará el enfrentamiento entre los supervivientes y los infectados. 
-            </h2>
-            <a class="btn btn-primary" href="#about">MAS INFORMACION</a>
-          </div>
+            <div class="text-center text-white">
+                <h1 class="mx-auto my-0 text-uppercase">La Liga</h1>
+                <br>
+                <br>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                    ¡La competencia está por comenzar! Se jugará en ZoneMod, un modo creado por la 
+                    comunidad que equilibrará el enfrentamiento entre los supervivientes y los infectados.
+                </h2>
+                <a class="btn btn-primary" href="#about">MAS INFORMACION</a>
+            </div>
         </div>
-      </div>
-      
-  </header>
+    </div>
+</header>
+
   
   
         <!-- Footer-->

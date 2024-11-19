@@ -29,7 +29,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <!-- Imagen al lado izquierdo de "La Liga" -->
                 <img src="assets/img/Copa.png" alt="Logo" style="width: 60px; height: 60px; margin-right: 10px;">
                 La Liga
@@ -43,6 +43,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Informacion</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Anuncios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contactenos</a></li>
                 </ul>
             </div>
         </div>
@@ -53,13 +54,10 @@
        <!-- Contenedor de Video -->
        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
         <!-- Video de fondo 1080p -->
-        <iframe 
-            src="https://www.youtube.com/embed/mKrAuDAvuJM?controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&autoplay=1&mute=1&loop=1&playlist=mKrAuDAvuJM&vq=hd1080" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);">
-        </iframe>
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/img/Fondo ‐ Hecho con Clipchamp.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
     </div>
     
         <div class="container d-flex align-items-center justify-content-center" 
@@ -160,20 +158,24 @@
         <div id="teamInfo">
             <div id="app">
                 <div class="card" style="display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto;">
-                    <!-- Contenedor con foto a la izquierda e información a la derecha -->
-                    <div style="display: flex; align-items: flex-start; padding: 10px;">
-                        <div style="width: 30%; padding: 10px;">
-                            <div class="main-img-preview card_image" id="previewContainer" style="text-align: center; height: 150px; width: 150px;">
-                                <img class="thumbnail img-preview picture" id="previewLogo" src="img/adriana.jpg" alt="Logo Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid rgb(250, 238, 227); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);">
+                    <!-- Contenedor principal con la imagen y la información -->
+                    <div style="display: flex; align-items: flex-start; padding: 10px;margin-top: -20px;">
+                        <!-- Imagen a la izquierda -->
+                        <div style="flex: 1; padding: 10px; text-align: center;margin-top: -20px;">
+                            <div class="main-img-preview card_image" id="previewContainer" style="height: 150px; width: 150px;">
+                                <img class="thumbnail img-preview picture" id="previewLogo" src="" alt="Logo Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid rgb(250, 238, 227); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);">
                             </div>
                         </div>
-                        <div id="infoContainer" style="width: 600px; padding: 10px; margin-top: -40px; margin-left: 20px;">
+
+                        <!-- Información a la derecha -->
+                        <div id="infoContainer" style="flex: 2; padding: 10px;margin-left: 50px;">
                             <h2 style="color: peru; margin: 0;">Información del equipo</h2>
                             <p style="color: gray; margin: 5px 0 0;"><strong>Nombre del equipo:</strong> <span id="displayTeamName"></span></p>
                             <p style="color: gray; margin: 5px 0 0;"><strong>Tag del equipo:</strong> <span id="displayTeamTag"></span></p>
                             <p style="color: gray; margin: 5px 0 0;"><strong>Nacionalidad:</strong> <span id="displayTeamNationality"></span></p>
                         </div>
                     </div>
+
 
                     <!-- Tabla de información -->
                     <div style="padding: 10px; margin-top: 20px;">
@@ -346,6 +348,8 @@
                                                 transform: scale(1);
                                             }
                                         } 
+                                       
+
                                     </style>
                                 
                                     <script>
@@ -449,6 +453,7 @@
                             displayReview();
                             
                             
+                            
                         } else {
                             currentPlayerIndex++;
                             updatePlayerForms();
@@ -472,28 +477,25 @@
                     }
                                 
              }
-    
-           
-            function displayReview() {
-                // Información del equipo
-                document.getElementById('displayTeamName').textContent = localStorage.getItem('teamName') || 'N/A';
-                document.getElementById('displayTeamTag').textContent = localStorage.getItem('teamTag') || 'N/A';
-                document.getElementById('displayTeamNationality').textContent = localStorage.getItem('teamNationality') || 'N/A';
-                // Recuperar la URL desde Local Storage
-                    const logoPreview = localStorage.getItem("teamLogoPreview");
-                    const previewContainer = document.getElementById("previewContainer");
-                    const previewLogo = document.getElementById("previewLogo");
-
-                    if (logoPreview) {
-                        // Mostrar la imagen si existe
-                        previewLogo.src = logoPreview;
-                        previewContainer.style.display = "block";
-                    } else {
-                        // Ocultar el contenedor si no hay imagen
-                        previewContainer.style.display = "none";
-                    }
-
+             
+             function displayReview(){
+                 // Cargar y mostrar datos del equipo
+            document.getElementById("displayTeamName").textContent = localStorage.getItem("teamName") || "N/A";
+            document.getElementById("displayTeamTag").textContent = localStorage.getItem("teamTag") || "N/A";
+            document.getElementById("displayTeamNationality").textContent = localStorage.getItem("teamNationality") || "N/A";
+            // Mostrar logo del equipo
+            const previewLogo = document.getElementById("previewLogo");
+            const storedLogo = localStorage.getItem("teamLogo");
+            if (storedLogo) {
+                previewLogo.src = storedLogo;
+                previewLogo.style.display = "block";
+            } else {
+                previewLogo.style.display = "none";
             }
+             }
+             
+
+             
             function vistaJugadores(index) {
                 // Información del equipo
                 const playerNickname = document.getElementById(`playerNickname${index}`).value;
@@ -540,7 +542,24 @@
                         console.log(`Datos del jugador ${index + 1} no encontrados en localStorage.`);
                     }
                 }
+                fixTablePosition();
+                
             }
+
+            function fixTablePosition() {
+            const reviewContainer = document.getElementById('reviewContainer');
+            const infoContainer = document.getElementById('infoContainer');
+            const playersTableBody = document.getElementById('playersTableBody');
+            const tableHeight = playersTableBody.offsetHeight;
+
+            // Asegurar que la tabla no mueva el contenedor
+            if (tableHeight > 300) {
+                reviewContainer.style.marginBottom = `${tableHeight}px`;
+                infoContainer.style.marginTop = '0px'; // Fijar la posición del contenedor
+            } else {
+                reviewContainer.style.marginBottom = '20px';
+            }
+        }
 
                
            document.getElementById('toCoCaptainButton').addEventListener('click', function () {
@@ -586,6 +605,7 @@
         });
                       
         
+
         
         // Agregar un event listener al botón para cargar los datos de los jugadores
                     
@@ -621,23 +641,7 @@
             
         });
     </script>
-    <script>
-        function adjustMargin() {
-            var playersCount = document.getElementById('playersTableBody').children.length;
-            var infoContainer = document.getElementById('infoContainer');
-            
-            if (playersCount <= 4) {
-                infoContainer.style.marginTop = '-40px';
-            } else if (playersCount <= 7) {
-                infoContainer.style.marginTop = '-60px';
-            } else {
-                infoContainer.style.marginTop = '-80px';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', adjustMargin);
-    </script>
-
+    
     
     
 </body>
